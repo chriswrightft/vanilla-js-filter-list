@@ -3,9 +3,12 @@ var filterList = function(inputBoxID, listItemClass){
     var inputBox = document.getElementById(inputBoxID);
 
     // add an event listener for when users start searching
-    inputBox.addEventListener("keyup", filterList);
+    inputBox.addEventListener("keyup", filterListClick);
 
-    function filterList(event){
+    // alphabet array
+    // var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+    function filterListClick(event){
 
         // Gather all the a links within the list items
         var listLi = document.querySelectorAll('ul li.'+listItemClass+' a');
@@ -24,12 +27,13 @@ var filterList = function(inputBoxID, listItemClass){
 
             // check if the input text exists inside any of the food items
             if(foodItemText.indexOf(inputText) > -1){
-                // remove the display style
+                // make the item visible
                 foodItemLi.style.display = '';
             }else{
                 // change the display to none to remove the item from the list
                 foodItemLi.style.display = 'none';
             }
         }
+
     }
 };

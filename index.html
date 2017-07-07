@@ -14,43 +14,13 @@
         <input type="text" placeholder="Search food" id="filterInput">
 
 		<ul id="foods" class="collection with-header">
-			<li class="collection-header">
-				<h5>A</h5>
-			</li>
-			<li class="collection-item">
-				<a href="#">Apple</a>
-			</li>
-			<li class="collection-item">
-				<a href="#">Avacado</a>
-			</li>
-			<li class="collection-header">
-				<h5>B</h5>
-			</li>
-			<li class="collection-item">
-				<a href="#">Baking soda</a>
-			</li>
-			<li class="collection-item">
-				<a href="#">Banana</a>
-			</li>
-			<li class="collection-item">
-				<a href="#">Bread</a>
-			</li>
-			<li class="collection-header">
-				<h5>C</h5>
-			</li>
-			<li class="collection-item">
-				<a href="#">Cereal</a>
-			</li>
-			<li class="collection-item">
-				<a href="#">Coffee</a>
-			</li>
-			<li class="collection-item">
-				<a href="#">Crisps</a>
-			</li>
+			<li class="collection-header" id="default-message" style='display: none'><h5>Hi</h5></li>
 		</ul>
 
 		</div>
 
+		<script type="text/javascript" src="list.js"></script>
+		<script type="text/javascript" src="fillCollection.js"></script>
         <script type="text/javascript" src="verboseES5.js"></script>
         <script>
             filterList('filterInput', 'collection-item');

@@ -1,6 +1,6 @@
-(function(d){
+var filterList = function(inputBoxID, listItemClass){
     // assign the input element to a variable
-    var inputBox = d.getElementById("filterInput");
+    var inputBox = document.getElementById(inputBoxID);
 
     // add an event listener for when users start searching
     inputBox.addEventListener("keyup", filterList);
@@ -8,7 +8,7 @@
     function filterList(event){
 
         // Gather all the a links within the list items
-        var listLi = document.querySelectorAll('ul li.collection-item a');
+        var listLi = document.querySelectorAll('ul li.'+listItemClass+' a');
 
         // on each click the value in the search box will be asssigned to a variable
         var inputText = event.target.value.toLowerCase();
@@ -32,4 +32,4 @@
             }
         }
     }
-}(window.document));
+};

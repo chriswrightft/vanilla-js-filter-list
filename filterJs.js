@@ -1,17 +1,34 @@
 (function(d){
-    var inputText = d.getElementById("filterInput");
+    // assign the input element to a variable
+    var inputBox = d.getElementById("filterInput");
 
-    inputText.addEventListener("keyup", filterList);
+    // add an event listener for when users start searching
+    inputBox.addEventListener("keyup", filterList);
 
     function filterList(event){
 
+        // Gather all the a links within the list items
         var listLi = document.querySelectorAll('ul li.collection-item a');
 
+        // on each click the value in the search box will be asssigned to a variable
+        var inputText = event.target.value.toLowerCase();
+
+        // loop through the list item a tags to change the display style
+        // when they match or fail to match the search term
         for(var i = 0; i < listLi.length; i++){
-            if(listLi[i].innerHTML.toLowerCase().indexOf(event.target.value.toLowerCase()) > -1){
-                listLi[i].parentNode.style.display = '';
+            // store the current list item text in a variable
+            var foodItemText = listLi[i].innerHTML.toLowerCase();
+
+            // Get the LI element of the current A tag
+            var foodItemLi = listLi[i].parentNode;
+
+            // check if the input text exists inside any of the food items
+            if(foodItemText.indexOf(inputText) > -1){
+                // remove the display style
+                foodItemLi.style.display = '';
             }else{
-                listLi[i].parentNode.style.display = 'none';
+                // change the dispaly to none to remove the item from the list
+                foodItemLi.style.display = 'none';
             }
         }
 

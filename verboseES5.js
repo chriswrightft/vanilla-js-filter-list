@@ -27,10 +27,9 @@
                 // remove the display style
                 foodItemLi.style.display = '';
             }else{
-                // change the dispaly to none to remove the item from the list
+                // change the display to none to remove the item from the list
                 foodItemLi.style.display = 'none';
             }
         }
-
     }
 }(window.document));

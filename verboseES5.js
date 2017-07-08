@@ -37,17 +37,24 @@ var filterList = function(inputBoxID, listItemClass){
             }
         }
 
+        // loop through the list of items and hide the collection-header if
+        // none of the list items are visible any more.
         for(var i = 0; i < alphabet.length; i++){
+            // get all the items using the individual letters
             var allLi = document.querySelectorAll('li#'+alphabet[i]);
             var LiAmount = allLi.length;
             var numberHidden = 0;
 
+            // loop through and increment the number of items hidden
+            // to be used to hide the header of that letter
             for(var j = 1; j < allLi.length; j ++){
+                // if the items is not visible increment the number of hidden items
                 if(allLi[j].style.display == 'none'){
                     numberHidden += 1;
                 }
             }
 
+            // hide/display the header based on the visible items.
             if(numberHidden == LiAmount -1){
                 document.querySelector('li#'+alphabet[i]+'.collection-header').style.display = "none";
                 hiddenHeader += 1;
@@ -56,6 +63,8 @@ var filterList = function(inputBoxID, listItemClass){
             }
         }
 
+        // display the default message if no headers display
+        // so users know to change their search
         if(hiddenHeader == 26){
             document.getElementById('default-message').style.display = "";
         }else{

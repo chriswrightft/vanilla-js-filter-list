@@ -6,9 +6,11 @@ var filterList = function(inputBoxID, listItemClass){
     inputBox.addEventListener("keyup", filterListClick);
 
     // alphabet array
-    // var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
     function filterListClick(event){
+
+        var hiddenHeader = 0;
 
         // Gather all the a links within the list items
         var listLi = document.querySelectorAll('ul li.'+listItemClass+' a');
@@ -35,5 +37,29 @@ var filterList = function(inputBoxID, listItemClass){
             }
         }
 
+        for(var i = 0; i < alphabet.length; i++){
+            var allLi = document.querySelectorAll('li#'+alphabet[i]);
+            var LiAmount = allLi.length;
+            var numberHidden = 0;
+
+            for(var j = 1; j < allLi.length; j ++){
+                if(allLi[j].style.display == 'none'){
+                    numberHidden += 1;
+                }
+            }
+
+            if(numberHidden == LiAmount -1){
+                document.querySelector('li#'+alphabet[i]+'.collection-header').style.display = "none";
+                hiddenHeader += 1;
+            }else{
+                document.querySelector('li#'+alphabet[i]+'.collection-header').style.display = "";
+            }
+        }
+
+        if(hiddenHeader == 26){
+            document.getElementById('default-message').style.display = "";
+        }else{
+            document.getElementById('default-message').style.display = "none";
+        }
     }
 };

@@ -6,17 +6,19 @@ var filterList = function(inputBoxID, listItemClass){
         var hiddenHeader = 0;
 
         for(var i = 0; i < foodItemA.length; i++){
-            foodItemA[i].parentNode.style.display = (foodItemA[i].innerHTML.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1)
+            foodItemA[i].parentNode.style.display = foodItemA[i].innerHTML.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1
                 ? '' //true
                 : 'none'; // false
         }
 
-        for(var i = 0; i < alphabet.length; i++){
-        	var allLi = document.querySelectorAll('li#'+alphabet[i]);
-        	var LiAmount = allLi.length;
-            var numberHidden = 0;
-            for(var j = 1; j < allLi.length; j ++){
-                numberHidden += (allLi[j].style.display == 'none') ? 1 : 0;
+            for(var i = 0; i < alphabet.length; i++){
+                var allLi = document.querySelectorAll('li#'+alphabet[i]);
+                var LiAmount = allLi.length;
+                var numberHidden = 0;
+                for(var j = 1; j < allLi.length; j ++){
+                numberHidden += (allLi[j].style.display == 'none')
+                    ? 1
+                    : 0;
             }
             if(numberHidden == LiAmount -1){
                 document.querySelector('li#'+alphabet[i]+'.collection-header').style.display = "none";
@@ -25,6 +27,8 @@ var filterList = function(inputBoxID, listItemClass){
                 document.querySelector('li#'+alphabet[i]+'.collection-header').style.display = "";
             }
         }
-        document.getElementById('default-message').style.display = hiddenHeader == 26 ? '' : 'none';
+        document.getElementById('default-message').style.display = hiddenHeader == 26
+            ? ''
+            : 'none';
     });
 };

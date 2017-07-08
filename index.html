@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie-edge">
-		<title>Shopping List</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-	</head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie-edge">
+	<title>Shopping List</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+</head>
 
-	<body>
-		<div class="container">
-        <h1 class="center-align">Shopping list</h1>
-        <input type="text" placeholder="Search food" id="filterInput">
+<body>
+	<div class="container">
+		<h1 class="center-align">Shopping list</h1>
+		<input type="text" placeholder="Search food" id="filterInput">
 
 		<ul id="foods" class="collection with-header">
 			<li class="collection-header" id="default-message" style='display: none'>
@@ -19,15 +19,14 @@
 			</li>
 		</ul>
 
-		</div>
+	</div>
 
-		<script type="text/javascript" src="list.js"></script>
-		<script type="text/javascript" src="fillCollection.js"></script>
-        <script type="text/javascript" src="shorthandES5.js"></script>
-        <script>
-            filterList('filterInput', 'collection-item');
-        </script>
-
-	</body>
+	<script type="text/javascript" src="list.js"></script>
+	<script type="text/javascript" src="fillCollection.js"></script>
+	<script type="text/javascript" src="shorthandES5.js"></script>
+	<script>
+		filterList('filterInput', 'collection-item');
+	</script>
+</body>
 
 </html>

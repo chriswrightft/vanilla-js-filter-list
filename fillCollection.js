@@ -1,5 +1,4 @@
 // not neccessary for the collection but used to fill it with names.
-
 var ulID = document.getElementById("foods");
 foodList = foodList.sort();
 function checkLIs(idLetter, item){

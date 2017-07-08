@@ -22,18 +22,18 @@ var filterList = function(inputBoxID, listItemClass){
         // when they match or fail to match the search term
         for(var i = 0; i < listLi.length; i++){
             // store the current list item text in a variable
-            var foodItemText = listLi[i].innerHTML.toLowerCase();
+            var itemText = listLi[i].innerHTML.toLowerCase();
 
             // Get the LI element of the current A tag
-            var foodItemLi = listLi[i].parentNode;
+            var itemLi = listLi[i].parentNode;
 
-            // check if the input text exists inside any of the food items
-            if(foodItemText.indexOf(inputText) > -1){
+            // check if the input text exists inside any of the items
+            if(itemText.indexOf(inputText) > -1){
                 // make the item visible
-                foodItemLi.style.display = '';
+                itemLi.style.display = '';
             }else{
                 // change the display to none to remove the item from the list
-                foodItemLi.style.display = 'none';
+                itemLi.style.display = 'none';
             }
         }
 

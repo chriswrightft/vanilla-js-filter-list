@@ -11,9 +11,9 @@
 <body>
 	<div class="container">
 		<h1 class="center-align">Shopping list</h1>
-		<input type="text" placeholder="Search food" id="filterInput">
+		<input type="text" placeholder="Search items" id="filterInput">
 
-		<ul id="foods" class="collection with-header">
+		<ul id="items" class="collection with-header">
 			<li class="collection-header" id="default-message" style='display: none'>
 				<h5>No data matches the search term...</h5>
 			</li>
@@ -23,7 +23,7 @@
 
 	<script type="text/javascript" src="list.js"></script>
 	<script type="text/javascript" src="fillCollection.js"></script>
-	<script type="text/javascript" src="shorthandES5.js"></script>
+	<script type="text/javascript" src="verboseES5.js"></script>
 	<script>
 		filterList('filterInput', 'collection-item');
 	</script>

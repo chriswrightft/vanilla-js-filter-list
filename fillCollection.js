@@ -1,6 +1,6 @@
 // not neccessary for the collection but used to fill it with names.
-var ulID = document.getElementById("foods");
-foodList = foodList.sort();
+var ulID = document.getElementById("items");
+var itemList = itemList.sort();
 function checkLIs(idLetter, item){
 	if(!!document.getElementById(idLetter)){
 		return true;
@@ -9,7 +9,7 @@ function checkLIs(idLetter, item){
 	}
 }
 
-function insertFoodItem(idLetter, item){
+function insertItem(idLetter, item){
 	if(!!document.getElementById(item)){
 		return true;
 	}else{
@@ -17,15 +17,15 @@ function insertFoodItem(idLetter, item){
 	}
 }
 
-for (var i = 0; i < foodList.length; i++) {
-	var foodItem = foodList[i];
-	if(foodItem.length > 0){
-		if(!/[a-z]/i.exec(foodItem)){
+for (var i = 0; i < itemList.length; i++) {
+	var item = itemList[i];
+	if(item.length > 0){
+		if(!/[a-z]/i.exec(item)){
 			continue;
 		}else{
-			var foodItemLetter = /[a-z]/i.exec(foodItem)[0].toLowerCase();
+			var itemLetter = /[a-z]/i.exec(item)[0].toLowerCase();
 		}
-		checkLIs(foodItemLetter, foodItem);
-		insertFoodItem(foodItemLetter, foodItem);
+		checkLIs(itemLetter, item);
+		insertItem(itemLetter, item);
 	}
 }

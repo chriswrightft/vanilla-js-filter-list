@@ -1,4 +1,4 @@
-Vanilla JavaScript filter code
+# Vanilla JavaScript filter code
 
 Add the script into your html file with the list you wish to filter, ideally at the bottom of the page just before the closing </body> tag.
 
@@ -13,3 +13,7 @@ Call the filter function passing through the ID for the text input and the class
     filterList('filterInput', 'collection-item');
 </script>
 ```
+
+## Example
+
+http://chriswft.co.uk/github/vanilla-js-filter-list/index.html

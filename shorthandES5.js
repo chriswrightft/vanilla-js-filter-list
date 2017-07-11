@@ -1,5 +1,5 @@
 var filterList = function(inputBoxID, listItemClass){
-    var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
     document.getElementById(inputBoxID).addEventListener("keyup", function(e){
         var inputText = e.target.value.toLowerCase(),
             countHeaders = 0;
@@ -8,20 +8,14 @@ var filterList = function(inputBoxID, listItemClass){
                 items = document.querySelectorAll('ul li.'+listItemClass+'#'+alphabet[i]+' a');
 
             for(var j = 0; j < items.length; j++){
-                if(items[j].innerHTML.toLowerCase().indexOf(inputText) > -1){
-                    items[j].parentNode.style.display = "";
-                }else{
-                    items[j].parentNode.style.display = "none";
-                    countItems++;
-                }
+                items[j].innerHTML.toLowerCase().indexOf(inputText) > -1
+                    ? items[j].parentNode.style.display = ""
+                    : (items[j].parentNode.style.display = "none", countItems++);
             }
 
-            if(countItems == items.length){
-                document.getElementById(alphabet[i]).style.display = "none";
-                countHeaders++;
-            }else{
-                document.getElementById(alphabet[i]).style.display = "";
-            }
+            countItems == items.length
+                ? (document.getElementById(alphabet[i]).style.display = "none", countHeaders++)
+                : document.getElementById(alphabet[i]).style.display = ""
 
         }
 

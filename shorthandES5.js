@@ -13,7 +13,11 @@ var filterList = function(inputBoxID, listItemClass){
                     : (items[j].parentNode.style.display = "none", countItems++);
             }
 
+<<<<<<< HEAD
             countItems == items.length
+=======
+            countItems === items.length
+>>>>>>> e260bd7... pulling to seperate computer
                 ? (document.getElementById(alphabet[i]).style.display = "none", countHeaders++)
                 : document.getElementById(alphabet[i]).style.display = ""
 

@@ -25,7 +25,7 @@ var filterList = function(inputBoxID, listItemClass){
 
             // loop through the list item a tags to change the display style
             // when match or fail to match the input field
-            for(var j = 0; j < items.length; j++){
+            for(var j = 0; j < itemsAmount; j++){
                 // Check if the search term exists in any of the items
                 if(items[j].innerHTML.toLowerCase().indexOf(inputText) > -1){
                     // keep the items visible

@@ -1,29 +1,30 @@
 var filterList = function(inputBoxID, listItemClass){
     var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     document.getElementById(inputBoxID).addEventListener("keyup", function(e){
-
-        var items = document.querySelectorAll('ul li.'+listItemClass+' a');
-        var hiddenHeader = 0;
-
-        for(var i = 0; i < items.length; i++){
-            items[i].parentNode.style.display = items[i].innerHTML.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1 ? '' : 'none';
-        }
-
+        var inputText = e.target.value.toLowerCase(),
+            countHeaders = 0;
         for(var i = 0; i < alphabet.length; i++){
-            var allLi = document.querySelectorAll('li#'+alphabet[i]);
-            var LiAmount = allLi.length;
-            var numberHidden = 0;
-            for(var j = 1; j < allLi.length; j ++){
-            numberHidden += (allLi[j].style.display == 'none') ? 1 : 0;
+            var countItems = 0,
+                items = document.querySelectorAll('ul li.'+listItemClass+'#'+alphabet[i]+' a');
+
+            for(var j = 0; j < items.length; j++){
+                if(items[j].innerHTML.toLowerCase().indexOf(inputText) > -1){
+                    items[j].parentNode.style.display = "";
+                }else{
+                    items[j].parentNode.style.display = "none";
+                    countItems++;
+                }
             }
-            if(numberHidden == LiAmount -1){
-                document.querySelector('li#'+alphabet[i]+'.collection-header').style.display = "none";
-                hiddenHeader += 1;
+
+            if(countItems == items.length){
+                document.getElementById(alphabet[i]).style.display = "none";
+                countHeaders++;
             }else{
-                document.querySelector('li#'+alphabet[i]+'.collection-header').style.display = "";
+                document.getElementById(alphabet[i]).style.display = "";
             }
+
         }
 
-        document.getElementById('default-message').style.display = hiddenHeader == 26 ? '' : 'none';
+        document.getElementById('default-message').style.display = (countHeaders == 26) ? "" : "none";
     });
 };

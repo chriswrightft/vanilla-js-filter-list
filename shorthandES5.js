@@ -15,18 +15,8 @@ var filterList = function(inputBoxID, listItemClass, defaultMessage){
             }
 
             countItems === items.length
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e260bd7... pulling to seperate computer
-=======
->>>>>>> 0bdb5e1... resolving merge conflicts
-                ? (document.getElementById(alphabet[i]).style.display = "none", countHeaders++)
-                : document.getElementById(alphabet[i]).style.display = ""
-=======
             ? (document.getElementById(alphabet[i]).style.display = "none", countHeaders++)
             : document.getElementById(alphabet[i]).style.display = ""
->>>>>>> 636923a... re-indenting all lines to make it uniform
-
         }
 
         document.getElementById(defaultMessage).style.display = (countHeaders === alphabet.length) ? "" : "none";

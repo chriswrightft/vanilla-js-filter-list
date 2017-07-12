@@ -10,7 +10,7 @@ Call the filter function passing through the ID for the text input and the class
 
 ```javascript
 <script>
-    filterList('filterInput', 'collection-item');
+	filterList('filterInput', 'collection-item');
 </script>
 ```
 

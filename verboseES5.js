@@ -1,3 +1,4 @@
+'use strict';
 var filterList = function(inputBoxID, listItemClass, defaultMessage){
     // assign the input element to a variable
     var inputBox = document.getElementById(inputBoxID);

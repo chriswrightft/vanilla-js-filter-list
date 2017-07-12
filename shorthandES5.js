@@ -1,4 +1,4 @@
-var filterList = function(inputBoxID, listItemClass){
+var filterList = function(inputBoxID, listItemClass, defaultMessage){
     var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
     document.getElementById(inputBoxID).addEventListener("keyup", function(e){
         var inputText = e.target.value.toLowerCase(),
@@ -23,6 +23,6 @@ var filterList = function(inputBoxID, listItemClass){
 
         }
 
-        document.getElementById('default-message').style.display = (countHeaders == 26) ? "" : "none";
+        document.getElementById(defaultMessage).style.display = (countHeaders === alphabet.length) ? "" : "none";
     });
 };

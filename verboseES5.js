@@ -1,4 +1,4 @@
-var filterList = function(inputBoxID, listItemClass){
+var filterList = function(inputBoxID, listItemClass, defaultMessage){
     // assign the input element to a variable
     var inputBox = document.getElementById(inputBoxID);
 
@@ -41,7 +41,7 @@ var filterList = function(inputBoxID, listItemClass){
 
             // if all the items for this letter are invisible
             // make the header letter invisible and removed from the DOM
-            if(countItems == itemsAmount){
+            if(countItems === itemsAmount){
                 document.getElementById(alphabet[i]).style.display = "none";
                 countHeaders++;
             }else{
@@ -51,10 +51,10 @@ var filterList = function(inputBoxID, listItemClass){
 
         // If all the headers are invisible
         // make the default mesage visible
-        if(countHeaders == 26){
-            document.getElementById('default-message').style.display = "";
+        if(countHeaders === alphabet.length){
+            document.getElementById(defaultMessage).style.display = "";
         }else{
-            document.getElementById('default-message').style.display = "none";
+            document.getElementById(defaultMessage).style.display = "none";
         }
     }
 };

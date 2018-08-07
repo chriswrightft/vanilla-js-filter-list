@@ -15,3 +15,5 @@ Call the filter function passing through the ID for the text input and the class
 ```
 
 ## Example
+
+https://chriswrightft.github.io/vanilla-js-filter-list/index.html
